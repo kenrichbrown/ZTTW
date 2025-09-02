@@ -1,7 +1,19 @@
-export default function HomePage({ up }) {
+"use client"
+import { useState } from "react";
+
+export default function HomePage() {
+  const [flip, setflip]=useState(false);
+  function toggle(){
+    setflip(true)
+     
+
+  }
   return (
+  
     <div>
-      <nav className="flex  flex-row justify-between items-center pl-2 pr-2 pb-3 sticky top-0  bg-white">
+      {flip === true ? (
+        <main>
+              <nav className="flex  flex-row justify-between items-center pl-2 pr-2 pb-3 sticky top-0  bg-white">
         <div className="flex flex-row items-center gap-5">
           <img
             className="w-20 cursor-pointer"
@@ -299,6 +311,13 @@ export default function HomePage({ up }) {
       </div>
 
       <h1 className="text-[12px] mt-10 mb-10 p-1">©2025, ZTTW.</h1>
+      </main>
+      ) : (<button onClick={toggle} className="bg-white w-full h-screen flex items-center justify-center">
+        <img src="https://www.zttw.store/cdn/shop/files/ZTTW_NEW_LOGO_PNG.png?v=1719231773&width=140" />
+      </button>)}
+
+      
     </div>
+  
   );
 }
