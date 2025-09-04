@@ -17,7 +17,7 @@ export default function HomePage() {
           className="bg-white w-full h-screen flex items-center flex-col justify-center"
         >
           <img src="https://www.zttw.store/cdn/shop/files/ZTTW_NEW_LOGO_PNG.png?v=1719231773&width=140" />
-          <h1 className="mt-10 font-medium font-mono">Click To Explore</h1>
+          <h1 className="mt-10 font-medium font-mono animate-bounce">Click To Explore</h1>
         </button>
       )}
     </div>
