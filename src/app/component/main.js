@@ -1,10 +1,12 @@
+import Slider from "./slider";
+
 export default function Main(){
     return(
            <main>
-              <nav className="flex  flex-row justify-between items-center pl-2 pr-2 pb-3 sticky top-0  bg-white">
+              <nav className="flex  flex-row justify-between items-center pl-2 pr-2 pb-3 sticky top-0 z-90 bg-white">
         <div className="flex flex-row items-center gap-5">
           <img
-            className="w-20 cursor-pointer"
+            className="w-20 cursor-pointer animate-bounce pt-2"
             src="https://www.zttw.store/cdn/shop/files/ZTTW_NEW_LOGO_PNG.png?v=1719231773&width=140"
           />
           <div className="lg:block">
@@ -31,21 +33,7 @@ export default function Main(){
         </div>
       </nav>
 
-      <div className="flex flex-col lg:flex lg:flex-row lg:gap-1 gap-1">
-        <video
-          src="/ZTTW.mp4"
-          className="w-full lg:w-1/2  lg:object-cover lg:h-[780px] "
-          autoPlay
-          muted
-          loop
-          playsInline
-        ></video>
-
-        <img
-          className="w-full lg:w-1/2  lg:object-cover lg:h-[780px]"
-          src="https://www.zttw.store/cdn/shop/files/20250723-0008101-R1-31-32.jpg?v=1754338053&width=960"
-        />
-      </div>
+      <Slider/>
 
       <div className="grid grid-cols-2 gap-4 mt-10 lg:grid-cols-4 pl-4 pr-4">
         <div className="text-[12px] block lg:text-[15px] group overflow-hidden">
@@ -251,17 +239,6 @@ export default function Main(){
         <a href="https://www.zttw.store/collections/ambition">
           <h1 className=" border-b-2 py-1">View all →</h1>
         </a>
-      </div>
-
-      <div className="flex flex-col lg:flex lg:flex-row gap-1 mt-10">
-        <img
-          className="w-full lg:w-1/2  lg:object-cover lg:h-[632px]"
-          src="https://www.zttw.store/cdn/shop/files/20250723-0008100-R1-16-17.jpg"
-        />
-        <img
-          className="w-full lg:w-1/2  lg:object-cover lg:h-[632px]"
-          src="https://www.zttw.store/cdn/shop/files/20250723-0008101-R1-01-2.jpg"
-        />
       </div>
 
       <div className="p-1 lg:flex lg:items-center lg:justify-between mt-3">
