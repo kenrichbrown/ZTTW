@@ -63,11 +63,11 @@ export default function slider() {
       </SwiperSlide>
 
       <div className="text-2xl justify-between inset-0 flex items-center p-4 absolute z-50  rounded-full  bottom-8 ">
-        <button className="prevBtn bg-white text-green-500 px-3 pb-2 rounded">
-          +
-        </button>
-        <button className="nextBtn bg-white text-red-500 px-4 pb-2 rounded">
+        <button className="prevBtn bg-white text-red-500 px-4.5 pb-2 rounded">
           -
+        </button>
+        <button className="nextBtn bg-white text-green-500 px-4 pb-2 rounded">
+          +
         </button>
       </div>
     </Swiper>

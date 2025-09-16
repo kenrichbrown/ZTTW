@@ -1,17 +1,49 @@
+"use client"
+import MyButton from "./buttton";
 import Slider from "./slider";
+import { useState } from "react";
+import Ham from "./hamburger";
+import Hide from "./hide";
 
 export default function Main(){
+  const [toggle ,setToggle] = useState(false)
+  const [menu  ,setMenu] = useState(false)
+  const [pc, setPc] =useState(false)
+
+  function openSearch (){
+    setToggle (true)
+  }
+  function closeSearch (){
+    setToggle (false)
+  }
+ 
+   function openMenu (){
+    setMenu (true)
+   }
+   function closeMenu (){
+    setMenu (false)
+   }
+   function openPc (){
+    setPc (true)
+   }
+   function closePc (){
+    setPc (false)
+   } 
+ 
     return(
            <main>
               <nav className="flex  flex-row justify-between items-center pl-2 pr-2 pb-3 sticky top-0 z-90 bg-white">
-        <div className="flex flex-row items-center gap-5">
+        <div className="flex flex-row items-center gap-20">
           <img
             className="w-20 cursor-pointer animate-bounce pt-2"
             src="https://www.zttw.store/cdn/shop/files/ZTTW_NEW_LOGO_PNG.png?v=1719231773&width=140"
           />
           <div className="lg:block">
-            <ul className=" gap-5 text-md lg:flex lg:flex-row hidden">
-              <li className="cursor-pointer">shop+ </li>
+            <ul className=" gap-5 text-md lg:flex lg:flex-row hidden z-90">
+              {pc === true ? (
+        <Hide hid={closePc}/> 
+      ) : (<li onClick={openPc} className="cursor-pointer">shop+ </li> )}
+               
               <li className="cursor-pointer">ALL PRODUCTS </li>
               <li className="cursor-pointer">COLLECTION </li>
               <li className="cursor-pointer">LOOK BOOK </li>
@@ -20,11 +52,18 @@ export default function Main(){
           </div>
         </div>
 
-        <div className="flex flex-row items-center gap-2">
-          <img className="w-6 lg:hidden" src="/icons8-menu.svg" />
+        <div className="flex flex-row items-center gap-2 ">
 
-          <img className="w-6 cursor-pointer" src="/icons8-search (1).svg" />
+          <img onClick={openMenu} className="w-6 lg:hidden" src="/icons8-menu.svg" />
+          {menu && (
+            <Ham build={closeMenu} />
+            
+          )}
 
+          <img onClick={openSearch} className="w-6 cursor-pointer" src="/icons8-search (1).svg" />
+          {toggle && (
+            <MyButton close={closeSearch}/>
+          )}
           <img
             className="w-6 h-6 cursor-pointer"
             src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADAAAAAwCAYAAABXAvmHAAAACXBIWXMAAAsTAAALEwEAmpwYAAACmUlEQVR4nO2ZT4hNURzHPywMYxaisDXjz4YhIskUYzNi1pQ/CxJrigXNjClWhCWGWFFsGaWkKWPLFJN/ZcpKM/7n+TN5OnVufbuNe+85d+acl96nTq/eud/v73vfu+93z7kP6vxfbAEuAy+Ab3YMA5fsXM3SDAwA1ZzxAFhMjbEB+FggfDLGgI3UCEtS4SvAOWAdMBtoBNba9ypy3CjQEjv8NOChhBoBlmccvwJ4l7qcorIp9clnhU9oBX6Irp2IXJUg5hIpygXRXSQizyWIuc6Lsl50wwRiJdBv+/pEnaXJHvfBoRuZ8cXqZsh7X4G79nKbFLYBv3OCJLiEz9OamlvLhp9b8FOdihOo2nY7p8wJ7BWzV8CifxR0JUvbDLyW+T0l8nNajHocQuSRp+2ReZPBm+titM8xRBZ52v0yf40S3BejjtRcsjQwr67kaTukrskwKb0+3dZO2ZZnXl3J07ZK3WeU4LMYmY4UinlS95OvSZOYfCf8QrEywY3SiWViYNpaaN5I/aU+Bu1iYHZboRmQ+pt9DHaLwQ3Cc1Pq7/IxOCYGZwjPWal/1MdA1+2HCc8RqX/ex+C2GOwgPDul/i0fg8di0EZ42qT+Ix+DETEwK8TQtEj9t67i6cBPK/4DzCQ8s+QEftlMhVmQ2lTEYkxyzHcRrhbhEPEYkhyrXITbRWg287G4JznM3rwwB0XYRzyuSI4DLsKTIuwlHr0ZW9pM+kRovo1YHJIc5j+GwvSLsJN4dEqOOy7CpyI0HSkWayTHExfhqAjNPSEWCyXHexdhcheu2jtiLBolh3ks77WdOw40EJ4G4ITkeOki1idjtTK6XE7ALN4GayB01Y5BnwWlufa77ROJ8Qihx+0D5a7Iv8M6deowhfwF+BC2GOS0rI0AAAAASUVORK5CYII="
